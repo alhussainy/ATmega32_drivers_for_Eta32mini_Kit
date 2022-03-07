@@ -1,0 +1,14 @@
+
+Eta32mini Atmega32 kit drivers/.vs/Eta32mini Atmega32 kit drivers/v14/.atsuo
+Eta32mini Atmega32 kit drivers/Eta32mini Atmega32 kit drivers.atsln
+*.d
+*.o
+*.eep
+*.elf
+*.hex
+*.lss
+*.map
+*.mk
+Eta32mini Atmega32 kit drivers/Eta32mini Atmega32 kit drivers/Debug/Makefile
+*.xml
+*.cproj
