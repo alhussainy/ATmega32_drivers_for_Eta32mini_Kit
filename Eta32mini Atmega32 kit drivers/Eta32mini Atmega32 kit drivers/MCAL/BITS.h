@@ -29,11 +29,16 @@
 #define COM00		4
 #define COM01		5
 #define WGM00		6
-#define FOC0		7
+
+#define FOC0		7	/*Force Output Compare*/
+/*The FOC0 bit is only active when the WGM00 bit specifies a non-PWM mode.*/
+/*When writing a logical one to the FOC0 bit, an immediate compare match is
+forced on the Waveform Generation unit but the TCNT0 is not changed*/
+/*The FOC0 bit is always read as zero*/
 
 /************TIMSK_BITS**********/
-#define TOIE0		0
-#define OCIE0		1
+#define TOIE0		0	/*Timer/Counter0 Overflow Interrupt Enable*/
+#define OCIE0		1	/*Timer/Counter0 Output Compare Match Interrupt Enable*/
 
 
 /************SREG_BITS**********/
