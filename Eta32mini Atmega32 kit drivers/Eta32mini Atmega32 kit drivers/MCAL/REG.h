@@ -71,6 +71,31 @@
 #define EEAR		(*((volatile u16*)0x3E))
 
 
+/*****************************TIMER_1_REGISTERS*************************************/
+#define TCCR1A		(*((volatile u8*)0x4F))
+#define TCCR1B		(*((volatile u8*)0x4E))
 
+#define TCNT1H		(*((volatile u8*)0x4D))
+#define TCNT1L		(*((volatile u8*)0x4C))
+/*To access TCNT1 as one 16-bit register*/
+#define TCNT1		(*((volatile u16*)0x4C))
+
+#define OCR1AH		(*((volatile u8*)0x4B))
+#define OCR1AL		(*((volatile u8*)0x4A))
+/*To access OCR1A as one 16-bit register*/
+#define OCR1A		(*((volatile u16*)0x4A))
+
+#define OCR1BH		(*((volatile u8*)0x49))
+#define OCR1BL		(*((volatile u8*)0x48))
+/*To access OCR1B as one 16-bit register*/
+#define OCR1B		(*((volatile u16*)0x48))
+
+#define ICR1H		(*((volatile u8*)0x47))
+#define ICR1L		(*((volatile u8*)0x46))
+/*To access ICR1 as one 16-bit register*/
+#define ICR1		(*((volatile u16*)0x46))
+/*note :
+To do a 16-bit write, the high byte must be written before the low byte. For a 16-bit read,
+the low byte must be read before the high byte.*/
 
 #endif /* REG_H_ */

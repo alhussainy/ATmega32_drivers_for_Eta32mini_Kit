@@ -12,3 +12,4 @@ Eta32mini Atmega32 kit drivers/Eta32mini Atmega32 kit drivers.atsln
 Eta32mini Atmega32 kit drivers/Eta32mini Atmega32 kit drivers/Debug/Makefile
 *.xml
 *.cproj
+Eta32mini Atmega32 kit drivers/Eta32mini Atmega32 kit drivers/HAL/LED/IncFile1.h

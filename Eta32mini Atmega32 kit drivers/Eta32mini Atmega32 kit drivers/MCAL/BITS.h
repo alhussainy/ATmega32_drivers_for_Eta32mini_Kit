@@ -39,7 +39,25 @@ forced on the Waveform Generation unit but the TCNT0 is not changed*/
 /************TIMSK_BITS**********/
 #define TOIE0		0	/*Timer/Counter0 Overflow Interrupt Enable*/
 #define OCIE0		1	/*Timer/Counter0 Output Compare Match Interrupt Enable*/
+	
+#define TICIE1		5	/*Timer/Counter1, Input Capture Interrupt Enable*/
+#define OCIE1A		4	/*Timer/Counter1, Output Compare A Match Interrupt Enable*/
+#define OCIE1B		3	/*Timer/Counter1, Output Compare B Match Interrupt Enable*/
+#define TOIE1		2	/*Timer/Counter1, Overflow Interrupt Enable*/
 
+
+/************TIFR_BITS**********/
+#define TOV0		0	/*Timer/Counter0 Overflow Interrupt Flag*/
+#define OCF0		1	/*Timer/Counter0 Output Compare Match Interrupt Flag*/
+
+#define ICF1		5	/*Timer/Counter1, Input Capture Interrupt Flag*/
+#define OCF1A		4	/*Timer/Counter1, Output Compare A Match Interrupt Flag*/
+#define OCF1B		3	/*Timer/Counter1, Output Compare B Match Interrupt Flag*/
+#define TOV1		2	/*Timer/Counter1, Overflow Interrupt Flag*/
+
+/*Note: All TIFR bits are automatically cleared when corresponding vector executed
+		or by writing logical one on them
+*/
 
 /************SREG_BITS**********/
 #define I_BIT		7
@@ -63,6 +81,26 @@ forced on the Waveform Generation unit but the TCNT0 is not changed*/
 #define EECR_EERIE	3
 
 
-/***************EEPROM_BITS**************/
+/***************TCCR1A_BITS**************/
+#define COM1A1		7
+#define COM1A0		6
+#define COM1B1		5
+#define COM1B0		4
+#define FOC1A		3	/* Force Output Compare for Channel A*/
+#define FOC1B		2	/* Force Output Compare for Channel B*/
+#define WGM11		1
+#define WGM10		0
 
+
+
+
+/***************TCCR1B_BITS**************/
+#define ICNC1		7	/*Input Capture Noise Canceler*/
+#define ICES1		6	/*Input Capture Edge Select*/
+
+#define WGM13		4
+#define WGM12		3	
+#define CS12		2	
+#define CS11		1
+#define CS10		0
 #endif /* BITS_H_ */

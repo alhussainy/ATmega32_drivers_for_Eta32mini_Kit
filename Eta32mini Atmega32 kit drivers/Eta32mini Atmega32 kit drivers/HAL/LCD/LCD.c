@@ -2,7 +2,7 @@
 /* File Name : LCD.c	                                                           */
 /* File Info : Contains functions implementation					               */
 /* Version   : V1.0                                                                */
-/* Date      : 07 Mar 2021                                                         */
+/* Date      : 09 Mar 2021                                                         */
 /* Author    : Alhussainy Khaled Anwar                                             */
 /***********************************************************************************/
 

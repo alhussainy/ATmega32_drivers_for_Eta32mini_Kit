@@ -43,6 +43,8 @@ void MTIMER_0_vInit(TIMER0_t* Ptr_tTimer){
 		}else if(Ptr_tTimer->COM_OUT == TOGGLE_CMP_NON_PWM) {
 			SET_BIT(TCCR0,COM00);
 			CLR_BIT(TCCR0,COM01);
+			DIO_t PWM_OUTPUT={B,PIN3,OUTPUT_MODE,NOT_SET};
+			MDIO_vInitPin(&PWM_OUTPUT);
 		}else if(Ptr_tTimer->COM_OUT == Clear_CMP_NON_PWM) {
 			CLR_BIT(TCCR0,COM00);
 			SET_BIT(TCCR0,COM01);
