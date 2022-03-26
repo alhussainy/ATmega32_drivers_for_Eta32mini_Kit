@@ -103,4 +103,48 @@ forced on the Waveform Generation unit but the TCNT0 is not changed*/
 #define CS12		2	
 #define CS11		1
 #define CS10		0
+
+
+/******************TWSR_BITS**************/
+
+#define TWPS0		0
+#define TWPS1		1
+
+/******************TWCR_BITS**************/
+#define TWINT		7	/*TWI Interrupt Flag*/
+/*The TWINT Flag must be cleared by software by writing a logic one to it*/
+/*this flag is not automatically cleared by hardware when executing the 
+interrupt routine. Also note that clearing this flag starts the operation 
+of the TWI, so all accesses to the TWI Address Register (TWAR), 
+TWI Status Register (TWSR), and TWI Data Register (TWDR) must be complete
+ before clearing this flag*/
+
+#define TWEA		6	/*TWI Enable Acknowledge Bit*/
+
+#define TWSTA		5	/*TWI START Condition Bit*/
+#define TWSTO		4	/* TWI STOP Condition Bit*/
+/*In slave mode, setting the TWSTO bit can be used to recover
+from an error condition. This will not generate a STOP condition, but the TWI 
+returns to a well-defined unaddressed slave mode and releases the SCL and SDA 
+lines to a high impedance state.*/
+#define TWWC		3	/*TWI Write Collision Flag*/
+/*The TWWC bit is set when attempting to write to the TWI Data Register – TWDR when
+TWINT is low. This flag is cleared by writing the TWDR Register when TWINT is high.*/
+#define TWEN		2	/*TWI Enable Bit*/
+#define TWIE		0	/*TWI Interrupt Enable*/
+
+
+/******************MCUCR_BITS**************/
+#define ISC11		3
+#define ISC10		2
+#define ISC01		1
+#define ISC00		0
+
+#define	ISC2		6
+
+/******************GICR_BITS**************/
+#define INT1		7
+#define INT0		6
+#define INT2		5
+
 #endif /* BITS_H_ */

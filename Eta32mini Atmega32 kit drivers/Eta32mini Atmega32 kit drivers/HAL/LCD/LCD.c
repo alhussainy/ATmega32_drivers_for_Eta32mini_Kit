@@ -129,19 +129,24 @@ void HLCD_vWriteInt(u32 num)
 	u32 rem = 0;
 	u8 arr [16];
 	s8 i = 0;
-	while(num != 0)
-	{
-		rem = num % 10;
-		arr[i] = rem + 48;
-		i++;
-		num = num / 10;
-	}
-	i--;
-	while(i > -1)
-	{
-		HLCD_vWriteCharacter(arr[i]);
+	if(num!=0){
+		while(num != 0)
+		{
+			rem = num % 10;
+			arr[i] = rem + 48;
+			i++;
+			num = num / 10;
+		}
 		i--;
+		while(i > -1)
+		{
+			HLCD_vWriteCharacter(arr[i]);
+			i--;
+		}
+	}else{
+		HLCD_vWriteCharacter('0');
 	}
+	
 }
 
 /***********************************************************************************/

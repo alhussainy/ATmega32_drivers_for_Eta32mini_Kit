@@ -97,5 +97,24 @@
 /*note :
 To do a 16-bit write, the high byte must be written before the low byte. For a 16-bit read,
 the low byte must be read before the high byte.*/
+/*******************TIFR*******************************/
+
+#define TIFR		(*((volatile u8*)0x58))
+
+
+/*********************************TWI REGISTERS****************************************/
+#define  TWCR		(*((volatile u8*)0x56))
+#define  TWDR		(*((volatile u8*)0x23))
+#define  TWAR		(*((volatile u8*)0x22))
+#define  TWSR		(*((volatile u8*)0x21))
+#define  TWBR		(*((volatile u8*)0x20))
+
+/*******************************EXT_INT REGISTERS**************************************/
+#define MCUCR		(*((volatile u8*)0x55))
+#define MCUCSR		(*((volatile u8*)0x54))
+#define GICR		(*((volatile u8*)0x5B))
+#define GIFR		(*((volatile u8*)0x5A))
+
+
 
 #endif /* REG_H_ */

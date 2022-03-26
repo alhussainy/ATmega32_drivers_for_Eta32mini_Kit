@@ -18,9 +18,9 @@
 /***********************************************************************************/
 #include "HELPER.h"
 #include "TIMER1_CFG.h"
-#include "avr/interrupt.h"
-
-
+//#include "avr/interrupt.h"
+#include "DIO.h"
+#include "avr/delay.h"
 static volatile void (*MTIMER_1_CALLBACK)(void);
 
 static u32 numberOfRequiredOverFlows;
@@ -113,4 +113,25 @@ void MPWM_1_vStart(TIMER1_t*Ptr_tTimer);
 /* Function Return: None						                                   */
 /***********************************************************************************/
 void MPWM_1_vStop(void);
+
+
+/***********************************************************************************/
+/* Function Name  : MTIMER_1_vInitICU	                                           */
+/* Function Info  : Inits ICU on timer 1		    			                   */
+/* Function Input : Pointer to  Configuration obj								   */
+/* Function Return: None						                                   */
+/***********************************************************************************/
+void MTIMER_1_vInitICU(TIMER1_t*Ptr_tTimer);
+
+
+
+/***********************************************************************************/
+/* Function Name  : MTIMER_1_u16CalcOnTicks                                        */
+/* Function Info  : Gets Ticks when ICP1 is high    			                   */
+/* Function Input : Pointer to  Configuration obj								   */
+/* Function Return: Ticks when ICP1 is high			                               */
+/***********************************************************************************/
+u16 MTIMER_1_u16CalcOnTicks(TIMER1_t*Ptr_tTimer);
+
+u32 TIMER_1_CALC_TIME(void);
 #endif /* TIMER1_H_ */

@@ -11,7 +11,7 @@
 /***********************************************************************************/
 #include "TIMER0_CFG.h"
 #include "TIMER0.h"
-
+#include "LED.h"
 
 
 /***********************************************************************************/
@@ -245,28 +245,27 @@ void MPWM_0_vStop(void){
 /***********************************************************************************/
 /* Function Info  : ISR to handle of Timer 0 overflow interrupt	                   */
 /***********************************************************************************/
-ISR(TIMER0_OVF_vect){
-
-	static u32 counter = 0;
-	counter++;
-	if(counter == numberOfRequiredOverFlows)
-	{
-		MTIMER_0_CALLBACK();
-		counter = 0;
-		TCNT0 = 256 - reminderOfReuiredOverFlows;
-	}
-}
+//void __vector_11(void)
+//{
+	//static u32 counter = 0;
+	//counter++;
+	//if(counter == numberOfRequiredOverFlows)
+	//{
+		//MTIMER_0_CALLBACK();
+		//counter = 0;
+		//TCNT0 = 256 - reminderOfReuiredOverFlows;
+	//}
+//}
 
 /***********************************************************************************/
 /* Function Info  : ISR to handle of Timer 0 clear on compare  match interrupt     */
 /***********************************************************************************/
-ISR(TIMER0_COMP_vect)
-{
-	static u32 counter = 0;
-	counter++;
-	if (counter == numberOfComparingMatchs)
-	{
-	MTIMER_0_CALLBACK();
-	counter = 0;
-	}
+void __vector_10(void){
+		static u32 counter = 0;
+		counter++;
+		if (counter == numberOfComparingMatchs)
+		{
+			MTIMER_0_CALLBACK();
+			counter = 0;
+		}
 }

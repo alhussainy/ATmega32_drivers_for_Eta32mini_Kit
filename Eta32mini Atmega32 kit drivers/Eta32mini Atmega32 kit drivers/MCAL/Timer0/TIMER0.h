@@ -19,7 +19,7 @@
 /***********************************************************************************/
 #include "HELPER.h"
 #include "TIMER0_CFG.h"
-#include "avr/interrupt.h"
+//#include "avr/interrupt.h"
 
 
 static volatile void (*MTIMER_0_CALLBACK)(void);
@@ -111,5 +111,17 @@ void MPWM_0_vStart(TIMER0_t*Ptr_tTimer);
 /* Function Return: None						                                   */
 /***********************************************************************************/
 void MPWM_0_vStop(void);
+
+
+/***********************************************************************************/
+/* Function Info  : ISR to handle of Timer 0 overflow interrupt	                   */
+/***********************************************************************************/
+//void __vector_11(void)     __attribute__((signal));
+
+/***********************************************************************************/
+/* Function Info  : ISR to handle of Timer 0 clear on compare  match interrupt     */
+/***********************************************************************************/
+void __vector_10(void)     __attribute__((signal));
+
 
 #endif /* TIMER0_H_ */
